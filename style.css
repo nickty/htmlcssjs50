@@ -5,6 +5,11 @@
 * {
   box-sizing: border-box;
 }
+
+:root {
+  --line-border-fill: #3498db;
+  --line-border-empty: #e0e0e0;
+}
 body {
   font-family: 'Roboto', sans-serif;
   display: flex;
@@ -14,51 +19,82 @@ body {
   height: 100vh;
   overflow: hidden;
   margin: 0;
+  background-color: #f6f7fb;
 }
 
 .container {
+  text-align: center;
+}
+
+.progress-container {
   display: flex;
-  width: 90vw;
-}
-
-.panel {
-  background-size: auto 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 80vh;
-  border-radius: 50px;
-  color: white;
-  cursor: pointer;
-  flex: 0.5;
-  margin: 10px;
+  justify-content: space-between;
   position: relative;
-  transition: flex 0.7s ease-in;
+  margin-bottom: 30px;
+  max-width: 100%;
+  width: 350px;
 }
 
-.panel h3 {
-  font-size: 24px;
+.progress-container::before {
+  content: '';
+  background-color: #e0e0e0;
   position: absolute;
-  bottom: 20px;
-  left: 20px;
-  margin: 0;
-  opacity: 0;
+  top: 50%;
+  height: 4px;
+  width: 100%;
+  transform: translateY(-50%);
+  z-index: -1;
+  transform: 0.4s ease;
+  left: 0;
 }
 
-.panel.active {
-  flex: 5;
+.progress {
+  background-color: #3498db;
+  position: absolute;
+  top: 50%;
+  height: 4px;
+  width: 0%;
+  transform: translateY(-50%);
+  z-index: -1;
 }
 
-.panel.active h3 {
-  opacity: 1;
-  transition: opacity 0.3s ease-in 0.4s;
+.circle {
+  background-color: white;
+  color: #999;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #e0e0e0;
+  transition: 0.4s ease;
 }
 
-@media (max-width: 480px) {
-  .container {
-    width: 100vw;
-  }
-  .panel:nth-of-type(4),
-  .panel:nth-of-type(5) {
-    display: none;
-  }
+.circle.active {
+  border-color: #3498db;
+}
+
+.btn {
+  background-color: #3498db;
+  color: white;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 8px 30px;
+  margin: 5px;
+  font-size: 14px;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:focus {
+  outline: 0;
+}
+
+.btn:disabled {
+  background-color: #e0e0e0;
+  cursor: not-allowed;
 }
