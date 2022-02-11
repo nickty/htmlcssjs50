@@ -16,20 +16,48 @@
       referrerpolicy="no-referrer"
     />
 
-    <title>Pogress Stesp</title>
+    <title>Rotating navigation</title>
   </head>
   <body>
     <div class="container">
-      <div class="progress-container">
-        <div class="progress" id="progress"></div>
-        <div class="circle">1</div>
-        <div class="circle">2</div>
-        <div class="circle">3</div>
-        <div class="circle">4</div>
+      <div class="circle-container">
+        <div class="circle">
+          <div>
+            <button id="close">
+              <i class="fas fa-times"></i>
+            </button>
+            <button id="open">
+              <i class="fas fa-bars"> </i>
+            </button>
+          </div>
+        </div>
+        <div class="content">
+          <h1>Amazon post</h1>
+          <small>Lorem ipsum dolor sit.</small>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit
+            perspiciatis architecto vitae laborum nam minima commodi saepe
+            delectus consectetur, harum aliquid perferendis, voluptas at, porro
+            quae suscipit similique cupiditate. Pariatur minus aliquam dicta
+            voluptate. Illum perspiciatis impedit ad fugit aspernatur? Sequi
+            mollitia expedita delectus reprehenderit earum, neque ullam quis
+            ratione esse, architecto rem. Cum doloremque omnis odit, explicabo
+            repellendus cumque facilis! A qui doloribus adipisci facilis quos
+            obcaecati eum est unde aut et, cum nam repudiandae, animi doloremque
+            nisi perferendis inventore! Debitis animi corporis earum nihil
+            consequuntur rem qui maiores, optio rerum doloribus recusandae
+            itaque placeat reprehenderit voluptatem impedit maxime?
+          </p>
+        </div>
       </div>
-      <button class="btn" id="prev" disabled>Pre</button>
-      <button class="btn" id="next">Next</button>
     </div>
+    <nav>
+      <ul>
+        <li><i class="fas fa-home"></i>Home</li>
+        <li><i class="fas fa-user-alt"></i>About</li>
+        <li><i class="fas fa-envelope"></i>Contact</li>
+      </ul>
+    </nav>
 
     <script src="script.js"></script>
   </body>
