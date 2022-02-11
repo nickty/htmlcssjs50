@@ -9,25 +9,37 @@
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
-  overflow: hidden;
+
+  flex-direction: column;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+
+  overflow-x: hidden;
+
+  background-color: #efedd6;
 }
 
-.bg {
-  background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png');
-  position: absolute;
-  top: -30px;
-  left: -30px;
-  width: calc(100vw + 60px);
-  height: calc(100vh + 60px);
-  z-index: -1;
-  filter: blur(0);
-}
-
-.loading-text {
-  font-size: 50px;
+.box {
+  background-color: aqua;
   color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  height: 200px;
+  border-radius: 10px;
+  margin: 10px;
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
+
+  transform: translateX(200%);
+  transition: transform 0.4s ease;
+}
+
+.box.show {
+  transform: translateX(0);
+}
+
+.box:nth-of-type(even) {
+  transform: translateX(-200%);
 }
